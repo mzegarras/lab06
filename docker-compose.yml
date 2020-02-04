@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  lab06:
+    image: mzegarra/lab06:0.0.5
+    build:
+      context: .
+      dockerfile: ./src/main/docker/Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      SERVER_CONFIG_ENABLED: "true"
+      SERVER_CONFIG_URL: "http://localhost:8080/config"
+      SERVER_CONFIG_FAIL_FAST: "false"
+      # "--spring.config.location=file:${configDirectory}/application.yml"]
+  jaeger:
+    image: "jaegertracing/all-in-one:latest"
+    environment:
+      COLLECTOR_ZIPKIN_HTTP_PORT: "9411"
+    ports:
+      - 5775:5775/udp
+      - 6831:6831/udp
+      - 6832:6832/udp
+      - 5778:5778
+      - 16686:16686
+      - 14268:14268
+      - 9411:9411
