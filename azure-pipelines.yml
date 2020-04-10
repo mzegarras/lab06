@@ -10,6 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: Bash@3
+  inputs:
+    filePath: 'ls -lta'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
