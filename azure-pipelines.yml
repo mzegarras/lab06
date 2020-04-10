@@ -12,7 +12,12 @@ pool:
 steps:
 - task: Bash@3
   inputs:
-    filePath: 'ls -lta'
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      ls -lta .
+      pwd
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -25,7 +30,12 @@ steps:
     goals: 'verify'
 - task: Bash@3
   inputs:
-    filePath: 'ls -lta'
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      ls -lta .
+      pwd
 - task: Docker@2
   inputs:
     command: 'build'
