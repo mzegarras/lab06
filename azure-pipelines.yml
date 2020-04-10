@@ -23,7 +23,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'verify'
-
+- task: Bash@3
+  inputs:
+    filePath: 'ls -lta'
 - task: Docker@2
   inputs:
     command: 'build'
