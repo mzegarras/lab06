@@ -20,12 +20,8 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'verify'
-- task: SSH@0
-  inputs:
-    runOptions: 'commands'
-    commands: 'ls -lta'
-    readyTimeout: '20000'
+
 - task: Docker@2
   inputs:
     command: 'build'
-    Dockerfile: '**/src/main/docker/Dockerfile'
+    Dockerfile: './src/main/docker/Dockerfile'
