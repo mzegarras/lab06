@@ -52,7 +52,7 @@ steps:
     containerRegistry: 'docke hub'
     command: 'login'          
 - task: Docker@2
-  displayName: push image
+  displayName: push image docker
   inputs:
     containerRegistry: 'docke hub'
     command: 'push'
