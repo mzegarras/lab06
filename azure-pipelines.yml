@@ -43,7 +43,7 @@ steps:
     dockerFile: '**/src/main/docker/Dockerfile'
     buildContext: $(Build.Repository.LocalPath)
     tags: |
-          $(TAG):$(Build.BuildId)
+          $(TAG_CONTAINER):$(Build.BuildId)
 - task: Docker@2
   inputs:
     containerRegistry: 'docke hub'
@@ -52,5 +52,5 @@ steps:
   inputs:
     containerRegistry: 'docke hub'
     command: 'push'
-    tags: '$(TAG):$(Build.BuildId)'
+    tags: '$(TAG_CONTAINER):$(Build.BuildId)'
 
