@@ -34,7 +34,7 @@ steps:
     script: |
       # Write your commands here
       
-      ls -lta .
+      ls -lta ./target
       pwd
 - task: Docker@2
   inputs:
