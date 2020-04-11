@@ -43,4 +43,4 @@ steps:
     dockerFile: '**/src/main/docker/Dockerfile'
     buildContext: $(Build.Repository.LocalPath)
     tags: |
-          mzegarras/lab06:$(Build.BuildId)
+          $(TAG)
