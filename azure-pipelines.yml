@@ -40,4 +40,5 @@ steps:
 - task: Docker@2
   inputs:
     command: 'build'
-    Dockerfile: './src/main/docker/Dockerfile'
+    dockerFile: '**/src/main/docker/Dockerfile'
+    #dockerFile: '**/Dockerfile'
