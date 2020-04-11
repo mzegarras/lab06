@@ -38,12 +38,14 @@ steps:
       ls -lta ./target
       pwd
 - task: Docker@2
+  displayName: Build an image
   inputs:
     command: 'build'
     dockerFile: '**/src/main/docker/Dockerfile'
     buildContext: $(Build.Repository.LocalPath)
-    tags: |
-          $(TAG_CONTAINER):$(Build.BuildId)
+    repository: $(TAG_CONTAINER)
+ #   tags: |
+#          $(TAG_CONTAINER):$(Build.BuildId)
 - task: Docker@2
   inputs:
     containerRegistry: 'docke hub'
@@ -52,5 +54,6 @@ steps:
   inputs:
     containerRegistry: 'docke hub'
     command: 'push'
-    tags: '$(TAG_CONTAINER):$(Build.BuildId)'
+    repository: $(TAG_CONTAINER)
+#    tags: '$(TAG_CONTAINER):$(Build.BuildId)'
 
