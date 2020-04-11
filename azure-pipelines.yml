@@ -39,4 +39,4 @@ steps:
 - task: Docker@2
   inputs:
     command: 'build'
-    Dockerfile: './src/main/docker/Dockerfile'
+    Dockerfile: '/src/main/docker/Dockerfile'
