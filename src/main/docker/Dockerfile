@@ -11,8 +11,6 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     rm /etc/localtime; \
 	dpkg-reconfigure -fnoninteractive tzdata
 
-ADD /home/vsts/work/1/s /tmp
-RUN ls -lta /tmp
+ADD target/lab06-*.jar app.jar
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.jar"]
-
