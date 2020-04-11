@@ -15,7 +15,6 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      mvn clean package
       ls -lta .
       pwd
 - task: Maven@3
