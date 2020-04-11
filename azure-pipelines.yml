@@ -43,4 +43,14 @@ steps:
     dockerFile: '**/src/main/docker/Dockerfile'
     buildContext: $(Build.Repository.LocalPath)
     tags: |
-          $(TAG)
+          $(TAG):$(Build.BuildId)
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docke hub'
+    command: 'login'          
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docke hub'
+    command: 'push'
+    tags: '$(TAG):$(Build.BuildId)'
+
