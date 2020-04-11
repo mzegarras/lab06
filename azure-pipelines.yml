@@ -28,6 +28,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'verify'
+    #preserveTimestamp: false # Optional    
 - task: Bash@3
   inputs:
     targetType: 'inline'
