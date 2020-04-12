@@ -22,3 +22,5 @@ steps:
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
     outputFormat: 'yaml'
+- script: kubectl get pods
+  displayName: 'Run a one-line script'
