@@ -20,11 +20,12 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
+
     - task: DockerCompose@0
       inputs:
         containerregistrytype: 'Container Registry'
         dockerRegistryEndpoint: 'docke hub'
         dockerComposeFile: './docker-compose.yml'
-        action: 'Push services'
+        action: 'Build services'
         buildImages: true
         serviceName: lab06
