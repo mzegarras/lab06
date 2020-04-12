@@ -24,8 +24,7 @@ stages:
       inputs:
         containerregistrytype: 'Container Registry'
         dockerRegistryEndpoint: 'docke hub'
-        dockerComposeFile: './docker-compose.yml'
-        action: 'Push services'
-        includeLatestTag: true
+        dockerComposeFile: '**/docker-compose.yml'
+        action: 'Build services'
         buildImages: true
         serviceName: lab06
