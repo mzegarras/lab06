@@ -26,4 +26,5 @@ stages:
         repository: 'mzegarra/lab06-devops'
         command: 'buildAndPush'
         dockerfile: '$(Build.SourcesDirectory)/src/main/docker/Dockerfile'
+        buildContext: '$(Build.Repository.LocalPath)'
         tags: '$(tag)'
