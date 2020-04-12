@@ -26,7 +26,6 @@ stages:
         dockerRegistryEndpoint: 'docke hub'
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Push services'
-        additionalImageTags: 'mzegarra/lab06-devops'
         includeLatestTag: true
         buildImages: true
         serviceName: lab06
