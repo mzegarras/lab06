@@ -21,3 +21,4 @@ steps:
     arguments: 'nodes'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
+    outputFormat: 'yaml'
