@@ -18,11 +18,11 @@ public class Account implements Serializable {
     private static final long serialVersionUID = -6503308210888015809L;
 
     @JsonProperty("id")
-    private int accountId;
+    private String accountId;
 
-    private double balance;
-
-    private CurrencyCode money;
+    private String balance;
+    private String availableBalance;
+    private CurrencyCode currency;
 
     @Override
     public int hashCode() {
@@ -39,4 +39,35 @@ public class Account implements Serializable {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
 
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getBalance() {
+        return balance;
+    }
+
+    public void setBalance(String balance) {
+        this.balance = balance;
+    }
+
+    public String getAvailableBalance() {
+        return availableBalance;
+    }
+
+    public void setAvailableBalance(String availableBalance) {
+        this.availableBalance = availableBalance;
+    }
+
+    public CurrencyCode getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(CurrencyCode currency) {
+        this.currency = currency;
+    }
 }

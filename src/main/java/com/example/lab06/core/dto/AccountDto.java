@@ -13,7 +13,6 @@ public class AccountDto implements Serializable {
     private static final long serialVersionUID = 7193203766462383090L;
 
     private Account account;
-    private EventStatus status;
 
     public Account getAccount() {
         return account;
@@ -21,13 +20,5 @@ public class AccountDto implements Serializable {
 
     public void setAccount(Account account) {
         this.account = account;
-    }
-
-    public EventStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(EventStatus status) {
-        this.status = status;
     }
 }

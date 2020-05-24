@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   lab06:
-    image: mzegarra/lab06:0.0.5
+    image: mzegarra/lab06:0.0.7
     build:
       context: .
       dockerfile: ./src/main/docker/Dockerfile

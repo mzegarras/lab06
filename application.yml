@@ -10,6 +10,24 @@ logging.level:
   #org.springframework.web: INFO
   #com.microsoft: ERROR
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    endpoint:
+      metrics:
+        enabled: true
+      prometheus:
+        enabled: true
+    enable:
+      root: false
+      jvm: true
+
 opentracing:
   jaeger:
     serviceName: lab01
@@ -54,52 +72,9 @@ lab01:
   features:
     crypto.key: 123456789012345678901234567890
     panicEnabled: false
-    smtp1:
-      host: gmail.com
-      cc:
-        - a@demo.com
-        - b@demo.com
-        - c@demo.com
-      port: 8080
-    smtp2:
-      host: gmail.com
-      cc:
-        - a@demo.com
-        - b@demo.com
-        - c@demo.com
-      port: 8080
-    apis:
-      - url: http://www.demo.com
-        credential:
-          user: admin
-          password: password
-        headers:
-          heade1: value1
-          heade2: value2
-          heade4: value4
-      - url: http://www.demo.com
-        credential:
-          user: admin
-          password: password
-        headers:
-          heade1: value1
-          heade2: value2
-          heade4: value4
-      - url: http://www.demo.com
-        credential:
-          user: admin
-          password: password
-        headers:
-          heade1: value1
-          heade2: value2
-          heade4: value4
-      - url: http://www.dem1o.com
-        credential:
-          user: admin
-          password: passwor1d
-        headers:
-          heade1: value1
-          heade2: value2
-          heade4: value4
+    ctaCteApi:
+      url: http://localhost:7071/accounts
+    ctaAhoApi:
+      url: http://localhost:7071/accounts
 
 crypto.key: "keyvalue"
