@@ -11,6 +11,8 @@
       mvn archetype:generate -DgroupId=com.example -DartifactId=lab01b -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
       ```          
 
+mvn spring-boot:run -Dspring.config.location=./application.yml
+
 * Spring boot:
     * Arquitectura (Controller, Service, Repository, Entity y Dto)
     * Crear test cases para Controller
